@@ -6,7 +6,11 @@ const HomePage = () => {
 
     <div class="container">
 
-      <HeroBanner />
+
+      <HeroBanner 
+        title="Biblioteca de Diseño & Teoría Visual"
+        subtitle="Colección y catálogo especializado en teoría visual, arquitectura, tipografía y diseño editorial."
+      />
 
       <section>
         <div class="section-header">
