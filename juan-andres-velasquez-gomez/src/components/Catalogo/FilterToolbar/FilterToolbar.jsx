@@ -1,3 +1,5 @@
+import Icon from '../../ui/Icon/Icon';
+
 function FilterToolbar({
   searchTerm,
   selectedCategory,
@@ -10,7 +12,7 @@ function FilterToolbar({
   return (
     <section className="filter-toolbar">
       <div className="search-group">
-        <i data-lucide="search" className="search-icon-pos icon-sm"></i>
+        <Icon name="search" className="search-icon-pos icon-sm" />
         <input
           type="text"
           className="search-input"
@@ -34,7 +36,7 @@ function FilterToolbar({
       </select>
 
       <span className="badge badge-neutral">
-        <i data-lucide="layers" className="icon-sm"></i>
+        <Icon name="layers" className="icon-sm" />
         <span>{resultCount} de {totalCount} registros</span>
       </span>
     </section>

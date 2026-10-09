@@ -1,3 +1,5 @@
+import Icon from '../../ui/Icon/Icon';
+
 function StatCard({ label, value, icon, backgroundColor, color }) {
   return (
     <article className="stat-card">
@@ -5,7 +7,7 @@ function StatCard({ label, value, icon, backgroundColor, color }) {
         className="stat-icon-wrapper"
         style={{ backgroundColor, color }}
       >
-        <i data-lucide={icon}></i>
+        <Icon name={icon} />
       </div>
       <div className="stat-content">
         <span className="stat-number">{value}</span>

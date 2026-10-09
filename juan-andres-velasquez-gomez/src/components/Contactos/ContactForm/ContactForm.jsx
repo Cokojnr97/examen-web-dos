@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Button from '../../ui/Button/Button';
+import Icon from '../../ui/Icon/Icon';
 
 function ContactForm() {
   const [nombre, setNombre] = useState('');
@@ -72,7 +73,7 @@ function ContactForm() {
       </div>
 
       <Button type="button" className="btn btn-primary" onClick={handleClick}>
-        <i data-lucide="send" className="icon-sm"></i>
+        <Icon name="send" className="icon-sm" />
         <span>Enviar Formulario</span>
       </Button>
     </form>

@@ -1,32 +1,33 @@
 import { Link } from "react-router-dom";
+import Icon from "../../ui/Icon/Icon";
 
 const Header = () => {
     return (
-        <header class="site-header">
-            <div class="container nav-bar">
-                <Link to="/" class="brand">
-                    <div class="brand-badge">
-                        <i data-lucide="book-open"></i>
+        <header className="site-header">
+            <div className="container nav-bar">
+                <Link to="/" className="brand">
+                    <div className="brand-badge">
+                        <Icon name="book-open" />
                     </div>
                     <span>Librería Archivo</span>
                 </Link>
                 <nav>
-                    <ul class="nav-links">
+                    <ul className="nav-links">
                         <li>
                             <Link to="/">
-                                <i data-lucide="home" class="icon-sm"></i>
+                                <Icon name="home" className="icon-sm" />
                                 <span>Inicio</span>
                             </Link>
                         </li>
                         <li>
                             <Link to="/catalogo">
-                                <i data-lucide="grid" class="icon-sm"></i>
+                                <Icon name="grid" className="icon-sm" />
                                 <span>Catálogo</span>
                             </Link>
                         </li>
                         <li>
                             <Link to="/contacto">
-                                <i data-lucide="mail" class="icon-sm"></i>
+                                <Icon name="mail" className="icon-sm" />
                                 <span>Contacto</span>
                             </Link>
                         </li>
