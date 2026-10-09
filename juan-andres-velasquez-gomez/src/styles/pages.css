@@ -1,0 +1,64 @@
+.catalog-empty {
+  grid-column: 1 / -1;
+  padding: 48px;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-medium);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.catalog-empty p {
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-bar {
+    height: auto;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    gap: 16px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-links a {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding-top: 24px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .hero-banner,
+  .contact-card {
+    padding: 24px;
+  }
+
+  .hero-title {
+    font-size: 1.6rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-details-box {
+    flex-direction: column;
+  }
+}
