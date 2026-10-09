@@ -1,3 +1,5 @@
+import Icon from '../../ui/Icon/Icon';
+
 function getCategoryClass(category) {
   const categoryClasses = {
     Arquitectura: 'badge-arquitectura',
@@ -16,10 +18,10 @@ function BookCard({ book }) {
       <div>
         <div className="card-top">
           <div className="card-icon-container">
-            <i data-lucide={book.icono}></i>
+            <Icon name={book.icono} />
           </div>
           <span className="card-rating-badge">
-            <i data-lucide="star" className="icon-sm"></i>
+            <Icon name="star" className="icon-sm" />
             <span>{book.calificacion.toFixed(1)}</span>
           </span>
         </div>
@@ -43,11 +45,11 @@ function BookCard({ book }) {
 
       <div className="card-footer">
         <span className="card-meta">
-          <i data-lucide="book-marked" className="icon-sm"></i>
+          <Icon name="book-marked" className="icon-sm" />
           <span>{book.paginas} páginas</span>
         </span>
         <span className="card-meta">
-          <i data-lucide="calendar" className="icon-sm"></i>
+          <Icon name="calendar" className="icon-sm" />
           <span>Edición {book.anio}</span>
         </span>
       </div>

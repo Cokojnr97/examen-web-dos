@@ -3,6 +3,7 @@ import HeroBanner from '../../components/HeroBanner/HeroBanner';
 import BookGrid from '../../components/Catalogo/BookGrid/BookGrid';
 import StatsGrid from '../../components/Home/StatsGrid/StatsGrid';
 import { booksData } from '../../data/booksData';
+import Icon from '../../components/ui/Icon/Icon';
 import { homeStatsData } from '../../data/homeStatsData';
 
 function HomePage() {
@@ -39,7 +40,7 @@ function HomePage() {
       <section>
         <div className="section-header">
           <h2 className="section-title">
-            <i data-lucide="bar-chart-3"></i>
+            <Icon name="bar-chart-3" />
             <span>Resumen del Repositorio</span>
           </h2>
         </div>
@@ -49,12 +50,12 @@ function HomePage() {
       <section style={{ marginTop: '44px' }}>
         <div className="section-header">
           <h2 className="section-title">
-            <i data-lucide="star"></i>
+            <Icon name="star" />
             <span>Obras Destacadas</span>
           </h2>
           <Link to="/catalogo" className="btn btn-outline">
             <span>Explorar Catálogo Completo</span>
-            <i data-lucide="arrow-right" className="icon-sm"></i>
+            <Icon name="arrow-right" className="icon-sm" />
           </Link>
         </div>
 

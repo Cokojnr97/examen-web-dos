@@ -1,8 +1,10 @@
+import Icon from '../../ui/Icon/Icon';
+
 function ContactInfoItem({ icon, label, value }) {
   return (
     <div className="contact-info-item">
       <div className="contact-icon-box">
-        <i data-lucide={icon}></i>
+        <Icon name={icon} />
       </div>
 
       <div>
