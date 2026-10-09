@@ -1,44 +1,67 @@
-import HeroBanner from "../../components/HeroBanner/HeroBanner";
-import Button from "../../components/Button/Button";
+import { Link } from 'react-router-dom';
+import HeroBanner from '../../components/HeroBanner/HeroBanner';
+import BookGrid from '../../components/Catalogo/BookGrid/BookGrid';
+import StatsGrid from '../../components/Home/StatsGrid/StatsGrid';
+import { booksData } from '../../data/booksData';
+import { homeStatsData } from '../../data/homeStatsData';
 
-const HomePage = () => {
+function HomePage() {
+  const totalPages = booksData.reduce((total, book) => total + book.paginas, 0);
+  const averageRating = (
+    booksData.reduce((total, book) => total + book.calificacion, 0) /
+    booksData.length
+  ).toFixed(1);
+  const categoriesCount = new Set(
+    booksData.map((book) => book.categoria)
+  ).size;
+
+  const metricValues = {
+    books: booksData.length,
+    categories: categoriesCount,
+    rating: averageRating,
+    pages: totalPages.toLocaleString(),
+  };
+  
+  const stats = homeStatsData.map((stat) => ({
+    ...stat,
+    value: metricValues[stat.key],
+  }));
+
+  const featuredBooks = booksData.filter((book) => book.destacado);
+
   return (
-
-    <div class="container">
-
-
-      <HeroBanner 
+    <div className="container">
+      <HeroBanner
         title="Biblioteca de Diseño & Teoría Visual"
         subtitle="Colección y catálogo especializado en teoría visual, arquitectura, tipografía y diseño editorial."
       />
 
       <section>
-        <div class="section-header">
-          <h2 class="section-title">
+        <div className="section-header">
+          <h2 className="section-title">
             <i data-lucide="bar-chart-3"></i>
             <span>Resumen del Repositorio</span>
           </h2>
         </div>
-        <div class="stats-grid" id="resumenMetricas"></div>
+        <StatsGrid stats={stats} />
       </section>
 
-      <section style="margin-top: 44px;">
-        <div class="section-header">
-          <h2 class="section-title">
+      <section style={{ marginTop: '44px' }}>
+        <div className="section-header">
+          <h2 className="section-title">
             <i data-lucide="star"></i>
             <span>Obras Destacadas</span>
           </h2>
-          <Button variant="outline">
+          <Link to="/catalogo" className="btn btn-outline">
             <span>Explorar Catálogo Completo</span>
-            <i data-lucide="arrow-right" class="icon-sm"></i>
-          </Button>
+            <i data-lucide="arrow-right" className="icon-sm"></i>
+          </Link>
         </div>
 
-        <div class="cards-grid" id="gridDestacados"></div>
+        <BookGrid books={featuredBooks} />
       </section>
-
     </div>
-  )
+  );
 }
 
-export default HomePage
+export default HomePage;
